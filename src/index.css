@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #FDFBF7;
+    color: #2D2926;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, .font-serif-display {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+  }
+}
+
+/* Editorial aesthetic custom utilities */
+.font-editorial-serif {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+}
+
+.border-editorial-rose {
+  border-color: #E8D1D1;
+}
+
+.bg-editorial-cream {
+  background-color: #FDFBF7;
+}
+
+.bg-editorial-rose {
+  background-color: #F5EBEB;
+}
+
+.text-editorial-cognac {
+  color: #8B5E3C;
+}
+
+.text-editorial-espresso {
+  color: #2D2926;
+}
+
+.text-editorial-gold {
+  color: #D4AF37;
+}
+
+.border-editorial-gold {
+  border-color: #D4AF37;
+}
+
+/* Custom glow and candle flame flicker animation */
+@keyframes flame-flicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.7)) drop-shadow(0 0 20px rgba(245, 158, 11, 0.4));
+  }
+  25% {
+    transform: scale(1.05, 0.95) rotate(1.5deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 14px rgba(251, 191, 36, 0.85)) drop-shadow(0 0 26px rgba(245, 158, 11, 0.5));
+  }
+  50% {
+    transform: scale(0.96, 1.04) rotate(-0.5deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.6)) drop-shadow(0 0 18px rgba(245, 158, 11, 0.35));
+  }
+  75% {
+    transform: scale(1.02, 1.02) rotate(1deg);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.8)) drop-shadow(0 0 22px rgba(245, 158, 11, 0.45));
+  }
+}
+
+.animate-flame {
+  animation: flame-flicker 2.8s infinite ease-in-out;
+  transform-origin: 50% 90%;
+}
+
+@keyframes soft-pulse {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(1.08); }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 4s infinite ease-in-out;
+}
+
+
